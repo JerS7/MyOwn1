@@ -1,22 +1,5 @@
-# Portfolio Starter
+# My Simple Portofilo
 
-Starter portfolio ringan menggunakan HTML, CSS, dan JavaScript.
-
-## Struktur
-
-- `index.html` - struktur halaman portfolio
-- `styles.css` - tampilan, layout responsif, dan animasi ringan
-- `script.js` - animasi reveal saat scroll
-- `assets/` - tempat menyimpan gambar, ikon, atau file media
-
-## Cara menjalankan
-
-Buka `index.html` langsung di browser.
-
-## Yang perlu diganti
-
-- `Nama Kamu`
-- Deskripsi hero
-- Daftar project
-- Daftar skill
-- Email dan link kontak
+Starting From here is something at the very least, This is a very empty and not yet finished website 
+Just using the usual HTML, CSS and JS
+Will make it better, other than that Hello
