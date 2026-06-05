@@ -18,10 +18,18 @@ revealElements.forEach((element) => revealObserver.observe(element));
 
 const switcherButtons = document.querySelectorAll(".page-switcher button");
 
+const pageMap = {
+  "coding": "index.html",
+  "design": "graphic-design.html",
+  "system": "coding.html"
+};
+
 switcherButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    switcherButtons.forEach((item) => item.classList.remove("is-active"));
-    button.classList.add("is-active");
+    const view = button.dataset.view;
+    if (pageMap[view]) {
+      window.location.href = pageMap[view];
+    }
   });
 });
 

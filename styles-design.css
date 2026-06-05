@@ -1,0 +1,157 @@
+/* styles-design.css — Graphic Design theme (Orange, Calm) */
+
+/* Import base styles */
+@import url("styles.css");
+
+/* ══════════════════════════════════════════════
+   ORANGE PALETTE — Warm, Calm, Creative
+   ══════════════════════════════════════════════ */
+:root {
+  color-scheme: light;
+  --bg: #fefbf7;
+  --surface: #fff9f2;
+  --ink: #2d1f0e;
+  --muted: #8a7a6a;
+  --accent: #d4703a;
+  --accent-soft: #fdeee4;
+  --line: rgba(212, 112, 58, 0.18);
+  --shadow: 7px 7px 0 rgba(212, 112, 58, 0.12);
+}
+
+/* ══════════════════════════════════════════════
+   BODY — Soft, warm background
+   ══════════════════════════════════════════════ */
+body.theme-design {
+  background:
+    linear-gradient(rgba(212, 112, 58, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 112, 58, 0.04) 1px, transparent 1px),
+    var(--bg);
+  background-size: 48px 48px, 48px 48px, auto;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ══════════════════════════════════════════════
+   TYPOGRAPHY — Softer, rounder
+   ══════════════════════════════════════════════ */
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+.welcome-section h1 {
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   BUTTONS & LINKS
+   ══════════════════════════════════════════════ */
+.page-switcher button.is-active {
+  background: var(--accent);
+  color: white;
+}
+
+.language-toggle {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.language-toggle:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* ══════════════════════════════════════════════
+   SECTION DIVIDERS
+   ══════════════════════════════════════════════ */
+.section-divider span::before {
+  background: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   WHAT I DO CARDS — Warm hover
+   ══════════════════════════════════════════════ */
+.what-list article {
+  border-color: var(--line);
+}
+
+.what-list article span {
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   Q&A DETAILS
+   ══════════════════════════════════════════════ */
+details summary::after {
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   FOOTER WAVE — Orange dots
+   ══════════════════════════════════════════════ */
+.footer-wave::before {
+  background:
+    radial-gradient(ellipse at 28% 70%, rgba(212, 112, 58, 0.12), transparent 34%),
+    radial-gradient(ellipse at 70% 54%, rgba(45, 31, 14, 0.07), transparent 30%);
+}
+
+/* ══════════════════════════════════════════════
+   PHOTO PLACEHOLDER — Rotating + Music Visualizer
+   ══════════════════════════════════════════════ */
+.photo-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.photo-visualizer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+}
+
+.photo-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: photo-rotate 20s linear infinite;
+  z-index: 2;
+  position: relative;
+}
+
+@keyframes photo-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ══════════════════════════════════════════════
+   ICON DOCK — Active state
+   ══════════════════════════════════════════════ */
+.icon-dock a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   ANIMATIONS — Slower, calmer
+   ══════════════════════════════════════════════ */
+.reveal {
+  transition-duration: 900ms;
+}

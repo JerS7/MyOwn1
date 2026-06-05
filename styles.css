@@ -27,7 +27,7 @@ body {
     var(--bg);
   background-size: 44px 44px, 44px 44px, auto;
   color: var(--ink);
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
 }
 
 a {
@@ -121,6 +121,13 @@ a {
     border-color 180ms ease,
     background 180ms ease,
     box-shadow 180ms ease;
+}
+
+/* When inside .top-controls, use relative positioning */
+.top-controls .language-toggle {
+  position: relative;
+  top: auto;
+  right: auto;
 }
 
 .language-toggle:hover,
@@ -498,37 +505,15 @@ h3 {
     linear-gradient(to right, var(--bg), transparent 16%, transparent 84%, var(--bg));
 }
 
-.dense-dots,
-.dense-dots::before,
-.dense-dots::after {
+/* ── Canvas wave (replaces CSS dots) ─────────────────── */
+.wave-canvas {
   position: absolute;
-  inset: -46px -28px;
-  background-image: radial-gradient(circle, rgba(23, 23, 23, 0.58) 1.25px, transparent 1.55px);
-  background-size: 10px 10px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-.dense-dots {
-  opacity: 0.72;
-  transform: perspective(520px) rotateX(58deg) translateY(24px) scale(1.08);
-  animation: dots-drift 18s ease-in-out infinite;
-  mask-image:
-    radial-gradient(ellipse at 20% 54%, black 0 18%, transparent 38%),
-    radial-gradient(ellipse at 48% 48%, black 0 26%, transparent 48%),
-    radial-gradient(ellipse at 78% 58%, black 0 20%, transparent 40%),
-    linear-gradient(black, black);
-}
-
-.dense-dots::before {
-  opacity: 0.42;
-  transform: translateY(-24px) skewY(-4deg);
-  animation: dots-stream 22s linear infinite;
-}
-
-.dense-dots::after {
-  opacity: 0.3;
-  transform: translateY(28px) skewY(5deg);
-  animation: dots-stream 26s linear infinite reverse;
-}
 
 .copyright {
   position: relative;
@@ -543,26 +528,6 @@ h3 {
     0 12px 32px rgba(255, 255, 255, 0.92);
 }
 
-@keyframes dots-drift {
-  0%,
-  100% {
-    transform: perspective(520px) rotateX(58deg) translate3d(-10px, 30px, 0) scale(1.08);
-  }
-
-  50% {
-    transform: perspective(520px) rotateX(58deg) translate3d(10px, 12px, 0) scale(1.1);
-  }
-}
-
-@keyframes dots-stream {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: 80px 40px;
-  }
-}
 
 .reveal {
   opacity: 0;

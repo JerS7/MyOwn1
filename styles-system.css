@@ -1,0 +1,195 @@
+/* styles-system.css — Sistem Informasi theme (Analysis, Green) */
+
+/* Import base styles */
+@import url("styles.css");
+
+/* ══════════════════════════════════════════════
+   GREEN PALETTE — Analytical, Professional
+   ══════════════════════════════════════════════ */
+:root {
+  color-scheme: light;
+  --bg: #f7faf7;
+  --surface: #f0f6f0;
+  --ink: #0e1f0e;
+  --muted: #4a6a4a;
+  --accent: #1a7a3a;
+  --accent-soft: #e4f5e8;
+  --line: rgba(26, 122, 58, 0.16);
+  --shadow: 7px 7px 0 rgba(26, 122, 58, 0.12);
+}
+
+/* ══════════════════════════════════════════════
+   BODY — Clean, grid-based background
+   ══════════════════════════════════════════════ */
+body.theme-system {
+  background:
+    linear-gradient(rgba(26, 122, 58, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 122, 58, 0.035) 1px, transparent 1px),
+    var(--bg);
+  background-size: 40px 40px, 40px 40px, auto;
+  font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+}
+
+/* ══════════════════════════════════════════════
+   MONO ACCENT — For data/code elements
+   ══════════════════════════════════════════════ */
+code, pre, .mono {
+  font-family: 'IBM Plex Mono', 'Consolas', monospace;
+}
+
+/* ══════════════════════════════════════════════
+   TYPOGRAPHY — Professional, clear
+   ══════════════════════════════════════════════ */
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+.welcome-section h1 {
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   BUTTONS & LINKS
+   ══════════════════════════════════════════════ */
+.page-switcher button.is-active {
+  background: var(--accent);
+  color: white;
+}
+
+.language-toggle {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.language-toggle:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* ══════════════════════════════════════════════
+   SECTION DIVIDERS
+   ══════════════════════════════════════════════ */
+.section-divider span::before {
+  background: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   WHAT I DO CARDS — Data-driven hover
+   ══════════════════════════════════════════════ */
+.what-list article {
+  border-color: var(--line);
+  border-left: 3px solid transparent;
+}
+
+.what-list article span {
+  color: var(--accent);
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════════════
+   Q&A DETAILS
+   ══════════════════════════════════════════════ */
+details summary::after {
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   FOOTER WAVE — Green dots
+   ══════════════════════════════════════════════ */
+.footer-wave::before {
+  background:
+    radial-gradient(ellipse at 28% 70%, rgba(26, 122, 58, 0.12), transparent 34%),
+    radial-gradient(ellipse at 70% 54%, rgba(14, 31, 14, 0.07), transparent 30%);
+}
+
+/* ══════════════════════════════════════════════
+   PHOTO PLACEHOLDER
+   ══════════════════════════════════════════════ */
+.photo-placeholder {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   ICON DOCK — Active state
+   ══════════════════════════════════════════════ */
+.icon-dock a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   ANALYSIS ACCENT — Extra touches
+   ══════════════════════════════════════════════ */
+.intro-copy .label {
+  color: var(--accent);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Eyebrow in green */
+.eyebrow {
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   TOP CONTROLS — Button grouping
+   ══════════════════════════════════════════════ */
+.top-controls {
+  position: fixed;
+  top: 16px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ══════════════════════════════════════════════
+   EASTER EGG — Hidden button
+   ══════════════════════════════════════════════ */
+.easter-egg-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 200ms ease, border-color 200ms ease;
+}
+
+.easter-egg-btn:hover {
+  opacity: 0.8;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════
+   EASTER EGG OVERLAY
+   ══════════════════════════════════════════════ */
+.easter-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.easter-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.easter-canvas {
+  position: absolute;
+  inset: 0;
+}
